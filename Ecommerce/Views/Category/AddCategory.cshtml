@@ -1,0 +1,21 @@
+﻿@model CategoryVieWModel
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/Shared/_Ecommerce.cshtml";
+}
+
+<h2>Category</h2>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="m-1 p-1" method="post">
+    
+    <div class="form-group">
+        <input type="hidden" asp-for="Id"/>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

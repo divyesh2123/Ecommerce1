@@ -1,0 +1,23 @@
+﻿@model UnitViewModel
+@{
+    ViewData["Title"] = "AddUnit";
+    Layout = "~/Views/Shared/_Ecommerce.cshtml";
+}
+
+<h2>AddUnit</h2>
+
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="m-1 p-1" method="post">
+
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+        <label asp-for="UnitName"></label>
+        <input asp-for="UnitName" type="text" class="form-control" />
+        <span asp-validation-for="UnitName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

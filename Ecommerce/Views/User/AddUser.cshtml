@@ -1,0 +1,93 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "AddUser";
+    Layout = "~/Views/Shared/_Ecommerce.cshtml";
+}
+
+<h2>Category</h2>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="m-1 p-1" method="post">
+
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="ContactNumber"></label>
+        <input asp-for="ContactNumber" type="text" class="form-control" />
+        <span asp-validation-for="ContactNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="AddressLine1"></label>
+        <input asp-for="AddressLine1" type="text" class="form-control" />
+        <span asp-validation-for="AddressLine1" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="AddressLine2"></label>
+        <input asp-for="AddressLine2" type="text" class="form-control" />
+        <span asp-validation-for="AddressLine2" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="City"></label>
+        <input asp-for="City" type="text" class="form-control" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="State"></label>
+        <input asp-for="State" type="text" class="form-control" />
+        <span asp-validation-for="State" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+
+        <label asp-for="Zipcode"></label>
+        <input asp-for="Zipcode" type="text" class="form-control" />
+        <span asp-validation-for="Zipcode" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+
+        <label asp-for="Role"></label>       
+        <select asp-for="RoleId" asp-items="Model.Data"></select>
+        <span asp-validation-for="RoleId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+

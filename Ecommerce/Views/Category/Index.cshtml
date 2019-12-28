@@ -1,0 +1,38 @@
+﻿@model List<CategoryVieWModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Ecommerce.cshtml";
+}
+
+<table class="table table-bordered table-sm table-striped">  
+    <thead>  
+    <tr><th>Id</th><th>Name</th><th>Update</th><th>Delete</th></tr>  
+    </thead>  
+    <tbody>  
+    @if (Model == null)  
+    {  
+        <tr><td colspan="7" class="text-center">No Model Data</td></tr>  
+    }  
+    else  
+    {  
+        foreach (var p in Model)  
+         {  
+             <tr>  
+                 <td>@p.Id</td>  
+                 <td>@p.Name</td>  
+                
+              
+                 <td><a asp-action="EditCategory" asp-route-id="@p.Id">Update</a></td>  
+                 <td>  
+                     <form asp-action="Delete" method="post" asp-route-id="@p.Id">  
+                         <button>Delete</button>  
+                     </form>  
+                 </td>  
+             </tr>  
+         }  
+    }  
+    </tbody>  
+</table>  
+
+
+

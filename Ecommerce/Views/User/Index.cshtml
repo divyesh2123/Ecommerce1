@@ -1,0 +1,54 @@
+﻿@model List<Ecommerce.ViewModels.UserViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Ecommerce.cshtml";
+}
+
+<h2>User Managemt Information</h2>
+
+<table class="table table-bordered table-sm table-striped">  
+    <thead>  
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ZipCode</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>  
+    </thead>  
+    <tbody>  
+    @if (Model == null)  
+    {  
+        <tr><td colspan="7" class="text-center">No Model Data</td></tr>  
+    }  
+    else  
+    {  
+        foreach (var p in Model)  
+        {  
+        <tr>
+            <td>@p.Name</td>
+            <td>@p.Email</td>
+            <td>@p.ContactNumber</td>
+            <td>@p.AddressLine1  @p.AddressLine2</td>
+            <td>@p.City</td>
+            <td>@p.State</td>
+            <td>@p.Zipcode</td>
+            <td>@p.Role</td>
+            <td>@p.Status </td>
+            <td><a asp-action="Index" asp-route-id="@p.Email">Update</a></td>
+            <td>
+                <form asp-action="Index" method="post" asp-route-id="@p.Email">
+                    <button>Delete</button>
+                </form>
+            </td>
+        </tr>  
+        }  
+    }  
+    </tbody>  
+</table>  

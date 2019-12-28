@@ -1,0 +1,120 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Ecommerce.Database
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@using Microsoft.AspNetCore.Identity
+@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/variables.less" rel="stylesheet" />
+    <link href="~/css/bootswatch.less" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+<div class="bs-component">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+         
+            <div class="navbar-brand">MakeWish E-Shopping</div>
+        </div>
+        <div class="navbar-collapse collapse">
+            
+                            
+          
+                           
+        </div>
+
+    </div>
+</div>
+    
+<div class="row">
+    <div class="col-lg-3">
+        <section id="socialLoginForm">
+            <h4>New User Retailer</h4>
+            <hr />
+            
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                   
+                    
+                    <a asp-action="RegisterRetailer" asp-controller="Account" class="btn btn-default" style="background-color: #007196;color: white">Retailer</a>
+                </div>
+            </div>
+            
+           
+        </section>
+    </div>
+    <div class="col-lg-6">
+        <section id="loginForm">
+ 
+
+                <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+               
+                <h4>Use a local account to log in.</h4>
+                <hr />
+               
+                <div class="form-group">
+                  
+                    <label asp-for="Email" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Email" type="email" class="form-control" placeholder="Email" />
+                      
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                      
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="col-md-2 control-label"></label>
+                    <div class="col-md-10">
+                        <input asp-for="Password" type="password" class="form-control" placeholder="Email" />
+                      
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                      
+                    </div>
+                </div>
+              
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Log in" class="btn btn-default" style="background-color: #007196;color: white" />
+                    </div>
+                </div>
+               
+            </form>
+        </section>
+    </div>
+    <div class="col-lg-3">
+        <section id="socialLoginForm">
+            <h4>New User Customer</h4>
+            <hr />
+            
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                   
+                    <a asp-action="Register" asp-controller="Account" class="btn btn-default" style="background-color: #007196;color: white">Customr</a>
+                </div>
+            </div>
+            
+            
+        </section>
+    </div>
+</div>
+</body>
+</html>
